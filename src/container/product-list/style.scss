@@ -1,0 +1,51 @@
+@use '../../lib/service.scss' as s;
+
+.product {
+	display: flex;
+	flex-direction: column;
+	padding: s.space(4);
+	gap: s.space(8);
+
+	&__title {
+		font-size: 28px;
+		font-weight: bold;
+		color: rgb(32, 116, 194);
+		padding-bottom: s.space(3);
+	}
+
+	&__card {
+		border: 2px solid s.color('light');
+		border-radius: s.space(5);
+		padding: s.space(5);
+		box-shadow: 5px 5px 5px 2px s.color('light');
+	}
+
+	&__card--title {
+		font-size: 20px;
+		font-weight: bold;
+		padding-bottom: s.space(3);
+	}
+
+	&__info {
+		// display: flex;
+		// flex-direction: column;
+		// gap: s.space(2);
+		font-size: 16px;
+		color: rgb(65, 62, 62);
+	}
+
+	&__id {
+			font-size: 20px;
+			color: gray;
+		}
+
+	&__price {font-size: 24px;}
+	}
+
+	
+ main {
+ 	display: flex;
+ 	flex-direction: column;
+ 	gap: s.space(10);
+ }
+

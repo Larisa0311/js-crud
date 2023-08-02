@@ -1,0 +1,42 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 32px;
+}
+.product__title {
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(32, 116, 194);
+  padding-bottom: 12px;
+}
+.product__card {
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 5px 5px 5px 2px #ddd;
+}
+.product__card--title {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 12px;
+}
+.product__info {
+  font-size: 16px;
+  color: rgb(65, 62, 62);
+}
+.product__id {
+  font-size: 20px;
+  color: gray;
+}
+.product__price {
+  font-size: 24px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/*# sourceMappingURL=style.css.map */
