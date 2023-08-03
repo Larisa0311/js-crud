@@ -269,22 +269,18 @@ router.post('/product-edit', function (req, res) {
 
 // ================================================================
 router.get('/product-delete', function (req, res) {
+  // res.render генерує нам HTML сторінку
   const { id } = req.query
-  const list = Product.getById(Number(id))
-
-  if (list === undefined) {
-    res.render('alert', {
-      style: 'alert',
-      info: 'Товар з таким ID не знайдено',
-    })
-  }
 
   Product.deleteById(Number(id))
 
+  // ↙️ cюди вводимо назву файлу з сontainer
   res.render('alert', {
+    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
     style: 'alert',
-    info: 'Товар успішно був видалений',
+    info: 'Товар видалений',
   })
+  // ↑↑ сюди вводимо JSON дані
 })
 // ================================================================
 // Підключаємо роутер до бек-енду
