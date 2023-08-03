@@ -68,10 +68,6 @@ class Product {
 
   static getList = () => this.#list
 
-  // static getListProduct = () => {
-  //   this.name, this.description, this.price, this.id
-  // }
-
   static add = (product) => this.#list.push(product)
 
   static getById = (id) =>
@@ -92,15 +88,9 @@ class Product {
     product,
     { name, price, description },
   ) => {
-    if (price) {
-      product.price = price
-    }
-    if (name) {
-      product.name = name
-    }
-    if (description) {
-      product.description = description
-    }
+    product.price = price
+    product.name = name
+    product.description = description
   }
 
   static deleteById = (id) => {
@@ -208,13 +198,45 @@ router.get('/product-list', function (req, res) {
 
   const list = Product.getList()
 
-  let { name, description, price, id } = req.query
-  console.log(name, description, price, id)
-
   // ↙️ cюди вводимо назву файлу з сontainer
   res.render('product-list', {
     // вказуємо назву папки контейнера, в якій знаходяться наші стилі
     style: 'product-list',
+    data: {
+      products: {
+        list,
+        isEmpty: list.length === 0,
+      },
+    },
+  })
+
+  // ↑↑ сюди вводимо JSON дані
+})
+// ================================================================
+router.get('/product-edit', function (req, res) {
+  // res.render генерує нам HTML сторінку
+  const { id } = req.query
+
+  const list = Product.getById(Number(id))
+
+  if (list === undefined) {
+    res.render('alert', {
+      style: 'alert',
+      info: 'Товар з таким ID не знайдено',
+    })
+  }
+
+  // ↙️ cюди вводимо назву файлу з сontainer
+  res.render('product-edit', {
+    // вказуємо назву папки контейнера, в якій знаходяться наші стилі
+    style: 'product-edit',
+
+    data: {
+      products: {
+        list,
+        isEmpty: list.length === 0,
+      },
+    },
   })
 
   // ↑↑ сюди вводимо JSON дані
@@ -229,6 +251,24 @@ router.post('/product-create', function (req, res) {
   Product.add(product)
 
   console.log(Product.getList())
+
+  res.render('alert', {
+    style: 'alert',
+    info: 'Успішне виконання дії',
+  })
+})
+
+// ================================================================
+
+router.post('/product-edit', function (req, res) {
+  const { name, price, description } = req.body
+  console.log(name, price, description, id)
+
+  // const product = new Product(name, price, description)
+
+  // Product.add(product)
+
+  // console.log(Product.getList())
 
   res.render('alert', {
     style: 'alert',
