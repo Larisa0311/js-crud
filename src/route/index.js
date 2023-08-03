@@ -73,24 +73,18 @@ class Product {
   static getById = (id) =>
     this.#list.find((product) => product.id === id)
 
-  static updateById = (id, data) => {
+  static updateById = (id, name, price, description) => {
     const product = this.getById(id)
 
-    if (product) {
-      this.update(product, data)
-      return true
-    } else {
-      return false
+    if (price) {
+      product.price = price
     }
-  }
-
-  static update = (
-    product,
-    { name, price, description },
-  ) => {
-    product.price = price
-    product.name = name
-    product.description = description
+    if (name) {
+      product.name = name
+    }
+    if (description) {
+      product.description = description
+    }
   }
 
   static deleteById = (id) => {
@@ -261,14 +255,11 @@ router.post('/product-create', function (req, res) {
 // ================================================================
 
 router.post('/product-edit', function (req, res) {
-  const { name, price, description } = req.body
-  console.log(name, price, description, id)
+  const { name, price, description, id } = req.body
 
-  // const product = new Product(name, price, description)
+  Product.updateById(Number(id), name, price, description)
 
-  // Product.add(product)
-
-  // console.log(Product.getList())
+  console.log(Product.getList())
 
   res.render('alert', {
     style: 'alert',
@@ -276,6 +267,25 @@ router.post('/product-edit', function (req, res) {
   })
 })
 
+// ================================================================
+router.get('/product-delete', function (req, res) {
+  const { id } = req.query
+  const list = Product.getById(Number(id))
+
+  if (list === undefined) {
+    res.render('alert', {
+      style: 'alert',
+      info: 'Товар з таким ID не знайдено',
+    })
+  }
+
+  Product.deleteById(Number(id))
+
+  res.render('alert', {
+    style: 'alert',
+    info: 'Товар успішно був видалений',
+  })
+})
 // ================================================================
 // Підключаємо роутер до бек-енду
 module.exports = router
