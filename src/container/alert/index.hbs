@@ -1,21 +1,11 @@
-{{!
-Це код container файлу для index сторінки,
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/product-create"
-}}
-
-<div class="card">
-  <div>
-    <h1>{{info}}</h1>
-  </div>
-
-  <div>
-    <a href='/product-list' class="btn">Повернутись назад</a>
-  </div>
+{{#with data}}
+<div class="product-card">
+  <img src="'{{img}}" alt="Товар 1" class="product-card__image">
+  <h2 class="product-card__title">{{title}} </h2>
+  <p class="product-card__subtitle">{{description}} </p>
+  {{#each category}}
+  <span class="product-card__category product-card__category--{{id}}">{{text}} </span>
+  {{/each}}
+  <button class="product-card__button">Купити зараз: {{price}} грн.</button>
 </div>
-
-{{!
-Цей код містить лише те, що буде виводитись в
-
-<body>
-  Адже наш layout/default.hbs має вже структуру HTML
-  }}
+{{/with}}

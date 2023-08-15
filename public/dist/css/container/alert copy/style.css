@@ -8,28 +8,14 @@
   align-items: center;
 }
 
-.card__header {
-  padding: 20px;
-}
-
-.card__title {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.card__subtitle {
-  font-size: 16px;
-}
-
-.card__button {
+.btn {
   border: 1px solid #ddd;
   padding: 8px 40px;
   color: white;
-  text-decoration: none;
   background-color: rgb(32, 116, 194);
 }
 
-.card__button :hover {
+.btn :hover {
   color: blue;
 }
 

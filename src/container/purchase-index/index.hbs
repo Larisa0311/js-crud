@@ -3,8 +3,15 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
 }}
 
-<main>
-  index page
+<main class="main">
+  {{> heading title='Товари' info="Комп'ютери та ноутбуки/Комп'ютери, неттопи, моноблоки"}}
+
+  <div class="product-list">
+    {{#each data.list}}
+    {{> purchase-product data=this}}
+    {{/each}}
+  </div>
+
 </main>
 
 {{!
