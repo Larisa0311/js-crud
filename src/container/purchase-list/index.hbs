@@ -5,33 +5,39 @@
 
 <main class="main">
 
+  {{> heading}}
+  {{#with data.purchases}}
+  <ul class="card">
+    {{#each list}}
+    <li class="card__item">
+      <a href="/purchase-info?id={{id}}">
+        <div class='purchase-item__block'>
+          <span class='title'>ID: {{id}}</span>
+        </div>
+      </a>
 
-  {{#with data.purchase}}
-  <form method="POST" action="/purchase-list" class='form-card'>
-    {{> heading title='Мої замовлення'}}
+      <div class='purchase-item__block'>
+        <span class='title'>Товари</span>
+        <span class='text'>{{product.title}}</span>
+      </div>
 
-    <ul class="card">
-      {{#each list}}
-      <li class="card__item">
-        <a href="/purchase-edit?id={{id}}">
-          {{> field label="ID" value=id}}</a>
-        {{> field label="Товар" value=product.title}}
-        {{> field label="Сума замовлення" value=totalPrice}}
-        {{> field label="Нараховані бонуси" value=counteredBonus}}
+      <div class="purchase-item__block">
+        <span class='title'>Сума до сплати:</span>
+        <span class='text'>{{totalPrice}} грн.</span>
+      </div>
 
-      </li>
-      {{> divider}}
+      <div class='purchase-item__block'>
+        <span class='title'>Нараховані бонуси:</span>
+        <span class='text'>{{counteredBonus}} грн.</span>
+      </div>
 
-      {{/each}}
-    </ul>
+    </li>
+    {{> divider}}
 
-
-
-
-
-  </form>
+    {{/each}}
+  </ul>
   {{/with}}
-
+  </form>
 </main>
 
 {{!

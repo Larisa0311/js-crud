@@ -32,6 +32,25 @@ main {
 .card__item {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-gap: s.space(2);;
+	gap: s.space(2);;
 }
 
+.purchase-item__block {
+	display: flex;
+	flex-direction: column;
+	gap: s.space(2);
+	padding-top: s.space(3);
+	padding-bottom: s.space(3);	
+}
+
+.title {
+	font-size: 16px;
+	font-weight: 400;
+	color: gray;
+}
+
+.text {
+	font-size: 16px;
+	font-weight: 400;
+	color: black
+}
