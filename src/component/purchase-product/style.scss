@@ -1,4 +1,5 @@
 @use '../../lib/service.scss' as s;
+@use '../../component/button/style.scss' as button;
 
 
 .product-card {
@@ -44,17 +45,17 @@
 	color: green;
 }
 
-.product-card__button {
-	background-color: s.color(main);
-	color: white;
-	border: none;
-	border-radius: 5px;
-	padding: 10px 20px;
-	font-size: 16px;
-	cursor: pointer;
-	transition: opacity 0.3s ease;
+// .product-card__button {
+// 	background-color: s.color(main);
+// 	color: white;
+// 	border: none;
+// 	border-radius: 5px;
+// 	padding: 10px 20px;
+// 	font-size: 16px;
+// 	cursor: pointer;
+// 	transition: opacity 0.3s ease;
 
-	&:hover {
-		opacity: 0.7;
-	}
-}
+// 	&:hover {
+// 		opacity: 0.7;
+// 	}
+// }

@@ -14,6 +14,20 @@
   color: #000;
 }
 
+.product__info__button {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+.product__info__button:hover {
+  opacity: 0.7;
+}
+
 .product-card {
   border-radius: 10px;
   border: 1px solid gray;
@@ -53,20 +67,6 @@
 .product-card__category--2 {
   border-color: green;
   color: green;
-}
-
-.product-card__button {
-  background-color: blue;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-.product-card__button:hover {
-  opacity: 0.7;
 }
 
 main {
