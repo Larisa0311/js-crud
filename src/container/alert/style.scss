@@ -11,14 +11,27 @@
 	align-items: center;
 	}
 
-.btn {
+.card__header {
+	padding: s.space(5);
+}
+
+.card__title {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.card__subtitle {
+	font-size: 16px;
+}
+
+.card__button {
 	border: 1px solid s.color('light');
 		padding: s.space(2) s.space(10);
 		color: white;
+		text-decoration: none;
 		background-color: rgb(32, 116, 194);
-		
 }
 
-.btn :hover {
+.card__button :hover {
 color: blue;
 }

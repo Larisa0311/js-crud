@@ -1,10 +1,6 @@
 @use '../../lib/service.scss' as s;
-@use '../../lib/spotify.scss' as spotify;
 
-.header {
-	display: flex;
-	justify-content: flex-end;
-}
+@use '../../lib/spotify.scss' as spotify;
 
 .choose {
 	display: grid;
@@ -29,7 +25,5 @@
 
 	&__text {
 		font-size: 16px;
-		// font-weight: 400;
-		// color: s.color(light);
 	}
 }

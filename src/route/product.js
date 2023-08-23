@@ -4,56 +4,56 @@ const express = require('express')
 const router = express.Router()
 
 // ================================================================
-class User {
-  static #list = []
+// class User {
+//   static #list = []
 
-  constructor(email, login, password) {
-    this.email = email
-    this.login = login
-    this.password = password
-    this.id = new Date().getTime()
-  }
+//   constructor(email, login, password) {
+//     this.email = email
+//     this.login = login
+//     this.password = password
+//     this.id = new Date().getTime()
+//   }
 
-  verifyPassword = (password) => this.password === password
+//   verifyPassword = (password) => this.password === password
 
-  static add = (user) => {
-    this.#list.push(user)
-  }
+//   static add = (user) => {
+//     this.#list.push(user)
+//   }
 
-  static getList = () => this.#list
+//   static getList = () => this.#list
 
-  static getById = (id) =>
-    this.#list.find((user) => user.id === id)
+//   static getById = (id) =>
+//     this.#list.find((user) => user.id === id)
 
-  static deleteById = (id) => {
-    const index = this.#list.findIndex(
-      (user) => user.id === id,
-    )
-    if (index !== -1) {
-      this.#list.splice(index, 1)
-      return true
-    } else {
-      return false
-    }
-  }
+//   static deleteById = (id) => {
+//     const index = this.#list.findIndex(
+//       (user) => user.id === id,
+//     )
+//     if (index !== -1) {
+//       this.#list.splice(index, 1)
+//       return true
+//     } else {
+//       return false
+//     }
+//   }
 
-  static updateById = (id, data) => {
-    const user = this.getById(id)
+//   static updateById = (id, data) => {
+//     const user = this.getById(id)
 
-    if (user) {
-      this.update(user, data)
-      return true
-    } else {
-      return false
-    }
-  }
+//     if (user) {
+//       this.update(user, data)
+//       return true
+//     } else {
+//       return false
+//     }
+//   }
 
-  static update = (user, { email }) => {
-    if (email) {
-      user.email = email
-    }
-  }
-}
+//   static update = (user, { email }) => {
+//     if (email) {
+//       user.email = email
+//     }
+//   }
+// }
 
 class Product {
   constructor(name, price, description) {
