@@ -4,8 +4,14 @@
 }}
 
 <main class="main">
+
   {{#with data}}
   <div class="main__content">
+    <div class="header">
+      <a href="/">
+        <img src="/svg/cross_back.svg">
+      </a>
+    </div>
     <h1 class="title title--center">Пошук плейлистa</h1>
 
     <form method='POST' action="/spotify-search" class="search">
@@ -17,8 +23,8 @@
     <ul class="playlist__list">
       {{#each list}}
       <li class="playlist">
-        <img src="{{image}}" alt="{{name}}" height="100px">
-        <div class="playlist__content">
+        <img src="{{image}}" alt="{{name}}" height="92px">
+        <div class="playlist__info">
           <strong class="playlist__name">{{name}} </strong>
           <span class="playlist__amount">Кількість пісень: {{amount}} </span>
         </div>

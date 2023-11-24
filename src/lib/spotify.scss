@@ -46,7 +46,7 @@ a {
 
 	&__list {
 		display: grid;
-		gap: s.space(7);
+		gap: s.space(6);
 	}
 
 	&__content {
@@ -58,12 +58,12 @@ a {
 
 	&__name {
 		font-size: 24px;
-		color: s.color(light);
+		color: s.color('light');
 	}
 
 	&__author {
 		font-size: 16px;
-		color: s.color(gray);
+		color: s.color('gray');
 	}
 }
 
@@ -87,11 +87,11 @@ a {
 
 	&__name {
 		font-size: 24px;
-		color: s.color(light);
+		color: s.color('light');
 	}
 
 	&__amount {
 		font-size: 16px;
-		color: s.color(gray);
+		color: s.color('gray');
 	}
 }

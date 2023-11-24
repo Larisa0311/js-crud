@@ -40,7 +40,7 @@ a:hover {
 }
 .track__list {
   display: grid;
-  gap: 28px;
+  gap: 24px;
 }
 .track__content {
   display: flex;
@@ -54,7 +54,6 @@ a:hover {
 }
 .track__author {
   font-size: 16px;
-  color: #8D8D8D;
 }
 
 .playList {
@@ -79,7 +78,6 @@ a:hover {
 }
 .playList__amount {
   font-size: 16px;
-  color: #8D8D8D;
 }
 
 /*# sourceMappingURL=spotify.css.map */

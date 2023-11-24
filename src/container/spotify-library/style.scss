@@ -3,13 +3,14 @@
 @use '../../lib/spotify.scss' as spotify;
 
 .search {
-	background-color: #292929;
+	// background-color: #292929;
 	padding: s.space(2) s.space(8);
 	border-radius: 8px;
 
 	display: flex;
 	justify-content: space-between;
-	
+	align-content: center;
+
 	gap: s.space(8);
 
 	color: s.color(light);

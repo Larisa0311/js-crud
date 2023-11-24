@@ -2,12 +2,16 @@
 
 @use '../../lib/spotify.scss' as spotify;
 
-.add-button {
+.add__button {
 	display: grid;
 	grid-template-columns: 92px 1tr;
 	align-items: center;
 	gap: s.space(6);
-	color: s.color(light);
+	color: s.color('light');
 	font-size: 18px;
 }
 
+.track__list {
+	background-color: s.color('gray_dark');
+	padding: 24px;
+}

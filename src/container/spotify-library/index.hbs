@@ -12,25 +12,30 @@
       <div class="search__button">
         <form method='POST' action="/spotify-search">
           <button type="submit">
-            <img src="/svg/spotify-search.svg">
+            <img src="/svg/spotify-search.svg" height="47px">
           </button>
         </form>
 
         <form method="GET" action="/spotify-choose">
           <button type="submit">
-            <img src="/svg/add-button.svg">
+            <img src="/svg/add_button.svg" height="42px">
           </button>
         </form>
       </div>
     </div>
 
-    <ul class="playlist-list">
+
+    <ul class="playlist__list">
       {{#each list}}
+      {{!-- {{#if isEmpty}}
+      <div class="playlist__name">Ще не створено жодного плейлиста. Додайте, будь-ласка, перший!</div>
+      {{/if}} --}}
       <li class="playlist">
-        <img src="{{image}}" alt="{{name}}" height="100px">
+        <img src="{{image}}" alt="{{name}}" height="92px">
         <div class="playlist__content">
           <strong class="playlist__name">{{name}} </strong>
           <span class="playlist__amount">Кількість пісень: {{amount}} </span>
+          <span disabled>{{playListId}}</span>
         </div>
 
 

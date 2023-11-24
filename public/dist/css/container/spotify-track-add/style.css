@@ -40,7 +40,7 @@ a:hover {
 }
 .track__list {
   display: grid;
-  gap: 28px;
+  gap: 24px;
 }
 .track__content {
   display: flex;
@@ -54,7 +54,6 @@ a:hover {
 }
 .track__author {
   font-size: 16px;
-  color: #8D8D8D;
 }
 
 .playList {
@@ -79,16 +78,20 @@ a:hover {
 }
 .playList__amount {
   font-size: 16px;
-  color: #8D8D8D;
 }
 
-.add-button {
+.add__button {
   display: grid;
   grid-template-columns: 92px 1tr;
   align-items: center;
   gap: 24px;
   color: #ddd;
   font-size: 18px;
+}
+
+.track__list {
+  background-color: #282828;
+  padding: 24px;
 }
 
 /*# sourceMappingURL=style.css.map */

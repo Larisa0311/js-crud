@@ -2,12 +2,18 @@
 
 @use '../../lib/spotify.scss' as spotify;
 
-.add-button {
-	display: grid;
-	grid-template-columns: 92px 1tr;
+.add_button {
+	display: flex;
+	// grid-template-columns: 92px 1tr;
 	align-items: center;
 	gap: s.space(6);
 	color: s.color(light);
-	font-size: 18px;
+	font-size: 24px;
+}
+
+.header {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
 }
 
